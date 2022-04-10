@@ -24,6 +24,6 @@ DienTich = ChieuDai * ChieuRong;
 ChuVi = (ChieuDai + ChieuRong) * 2;
 
 // B3:
-console.log("Diện Tích HCN: " + DienTich)
+console.log("Diện Tích HCN: " + DienTich);
 
-console.log("Chu Vi HCN: " + ChuVi)
+console.log("Chu Vi HCN: " + ChuVi);
