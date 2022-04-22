@@ -4,20 +4,36 @@
  * + TiLeQuyDoi
  * 
  * Khối 2: các bước xử lí
- * + SoTienSauQuyDoi = SoTienUSD * TiLeQuyDoi
+ * B1: tìm tới thẻ bằng id
+ * B2: Tạo hàm
+ *      + Lấy giá trị từ form
+ *      + Lấy công thức tính toán
+ *      SoTienSauQuyDoi = SoTienUSD * TiLeQuyDoi
+ * B3: Gắn sự kiện click cho button
+ * B4: Hiển thị kết quả lên UI
  * 
  * Khối 3: Output
  * + SoTienSauQuyDoi
  */
 
 
-// B1:
-var SoTienUSD = 2;
+var inputUSD = document.getElementById("inputUSD");
 var TiLeQuyDoi = 23500;
-var SoTienSauQuyDoi = 0;
 
-// B2:
-SoTienSauQuyDoi = SoTienUSD * TiLeQuyDoi;
+function QuyDoiTien() {
+    var SoTienUSD = inputUSD.value;
 
-// B3:
-console.log("Số Tiền Sau Quy Đổi: " + SoTienSauQuyDoi.toLocaleString() + " VND");
+    var SoTienSauQuyDoi = SoTienUSD * TiLeQuyDoi;
+
+    document.getElementById("txtResult").innerHTML = SoTienSauQuyDoi.toLocaleString() + " VND";
+    document.getElementById("txtResult").style.textAlign = "center";
+    document.getElementById("txtResult").style.marginTop = "25px";
+
+}
+
+document.getElementById("btnCalc").onclick = QuyDoiTien;
+
+
+
+
+

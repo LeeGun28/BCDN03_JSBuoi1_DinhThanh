@@ -4,20 +4,33 @@
  * + SoNgayLam
  * 
  * Khối 2: 
- * + Luong = Luong1Ngay * SoNgayLam
+ * B1: tìm tới thẻ bằng id
+ * B2: Tạo hàm
+ *      + Lấy giá trị từ form
+ *      + Lấy công thức tính toán:
+ *      Luong = Luong1Ngay * SoNgayLam
+ * B3: Gắn sự kiện click cho button
+ * B4: Hiển thị kết quả lên UI
  * 
  * Khối 3: Output
  * +Lương
  * 
  */
 
-// B1:
-var Luong1Ngay = 100000;
-var SoNgayLam = 24;
-var Luong = 0;
 
-// B2:
-TongLuong = Luong1Ngay * SoNgayLam;
+var inputluong1Ngay = document.getElementById("inputLuong1Ngay");
+var inputsoNgayLam = document.getElementById("inputSoNgayLam");
 
-// B3:
-console.log("Tổng Lương:" + TongLuong.toLocaleString()  + "VND")
+function TinhLuong() {
+    var luong1Ngay =  inputLuong1Ngay.value;
+    var soNgayLam =  inputSoNgayLam.value;
+
+    var luong = luong1Ngay * soNgayLam;    
+
+    document.getElementById("txtResult").innerHTML = luong.toLocaleString() + " VND";
+    document.getElementById("txtResult").style.textAlign = "center";
+    document.getElementById("txtResult").style.marginTop = "25px";
+    
+}
+
+document.getElementById("btnCalc").onclick = TinhLuong;

@@ -4,26 +4,34 @@
  * + ChieuRong
  * 
  * Khối 2: các bước xử lí
- * + DienTich = ChieuDai * ChieuRong
- * + ChuVi = (ChieuDai + ChieuRong) * 2
+ * B1: tìm tới thẻ bằng id
+ * B2: Tạo hàm
+ *      + Lấy giá trị từ form
+ *      + Lấy công thức tính toán:
+ *      DienTich = ChieuDai * ChieuRong
+ *      ChuVi = (ChieuDai + ChieuRong) * 2
+ * B3: Gắn sự kiện click cho button
+ * B4: Hiển thị kết quả lên UI
  * 
  * Khối 3: Output
  * + DienTich
  * + ChuVi
  */
 
-// B1:
-ChieuDai = 5;
-ChieuRong = 3;
-DienTich = 0;
-ChuVi = 0;
+var inputchieuDai = document.getElementById("inputchieuDai");
+var inputchieuRong = document.getElementById("inputchieuRong");
 
-// B2:
-DienTich = ChieuDai * ChieuRong;
+function TinhChuvivaDientich() {
+    var ChieuDai = inputchieuDai.value;
+    var ChieuRong = inputchieuRong.value;
 
-ChuVi = (ChieuDai + ChieuRong) * 2;
+    var DienTich = ChieuDai * ChieuRong;
+    var ChuVi = (Number(ChieuDai) + Number(ChieuRong)) * 2;
 
-// B3:
-console.log("Diện Tích HCN: " + DienTich);
+    document.getElementById("txtResult").innerHTML = "Diện Tích = " + DienTich + "<br> Chu Vi = " + ChuVi;
+    document.getElementById("txtResult").style.textAlign = "center";
+    document.getElementById("txtResult").style.marginTop = "25px";
 
-console.log("Chu Vi HCN: " + ChuVi);
+}
+
+document.getElementById("btnCalc").onclick = TinhChuvivaDientich;
