@@ -12,6 +12,8 @@
  *      + Lấy giá trị từ form
  *      + Lấy công thức tính toán
  *      trungbinh  = (number1 + number2 + number3 + number4 + number5) / 5
+ * B3: Gắn sự kiện click cho button
+ * B4: Hiển thị kết quả lên UI
  * 
  * Khối 3: Output
  * TrungBinh
@@ -31,9 +33,6 @@ function TinhTrungBinh() {
     var num3 = inputnum3.value;
     var num4 = inputnum4.value;
     var num5 = inputnum5.value;
-
-    console.log(typeof(num1));
-    console.log(typeof(num2));
 
     var trungBinh  = (Number(num1) + Number(num2) + Number(num3) + Number(num4) + Number(num5)) / 5;
 
